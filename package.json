@@ -1,0 +1,26 @@
+{
+  "name": "teamprofilegen",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ObregonScott/TeamProfileGen.git"
+  },
+  "author": "Scott Obregon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ObregonScott/TeamProfileGen/issues"
+  },
+  "homepage": "https://github.com/ObregonScott/TeamProfileGen#readme",
+  "dependencies": {
+    "inquirer": "^9.0.0",
+    "jest": "^28.1.1"
+  }
+}
