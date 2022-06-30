@@ -7,21 +7,7 @@ test('Can create github via constructor', () => {
     expect(e.github).toBe(testValue);
 });
 
-test('Can create id via constructor', () => {
-    const id = 452
-    const e = new Employee ('Scott', id);
-
-    expect(e.id).toBe(id);
-});
-
-test('Can create email via constructor', () => {
-    const email = 'test@test.com'
-    const e = new Employee ('Scott', 452, email);
-
-    expect(e.email).toBe(email);
-});
-
-test('Can create name via getName()', () => {
+test('Can create name via getGithub()', () => {
     const testValue = 'Scott'
     const e = new Employee (testValue);
 

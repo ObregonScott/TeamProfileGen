@@ -7,7 +7,7 @@
     "lib": "lib"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --verbose test/*"
   },
   "repository": {
     "type": "git",
@@ -20,7 +20,9 @@
   },
   "homepage": "https://github.com/ObregonScott/TeamProfileGen#readme",
   "dependencies": {
-    "inquirer": "^9.0.0",
-    "jest": "^28.1.1"
+    "inquirer": "^9.0.0"
+  },
+  "devDependencies": {
+    "jest": "^28.1.2"
   }
 }
