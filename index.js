@@ -4,10 +4,8 @@ const Manager = require('../lib/Manager')
 const Engineer = require('../lib/Engineer')
 const Intern = require('../lib/Intern')
 
-// const { assertNewExpression } = require('@babel/types');
-
 function promptUser() {
-    inquirer.prompt([
+    return inquirer.prompt([
         {
             type: 'input',
             name: 'name',
