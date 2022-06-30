@@ -4,7 +4,7 @@ const Employee = require('../lib/Employee')
 //the tests to something more managable........
 test('Creates an Employee object', () => {
     const employee = new Employee("Scott", 1, "test@email.com");
-    expect(employee.getName()).toEqual("Scott");
+    expect(employee.getName()).toBe("Scott");
     expect(employee.getId()).toEqual(expect.any(Number));
     expect(employee.getEmail()).toEqual(expect.any(String));
     expect(employee.getRole()).toEqual("Employee");

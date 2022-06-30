@@ -1,7 +1,8 @@
 const Manager = require("../lib/Manager")
 
+//Basically did the same thing I did to Employee test
 test("creates a Manager Object", () => {
-    const manager = new Manager('Scott', 4, "test@email.com", 1)
+    const manager = new Manager('Scott', 2319, "test@email.com", 2319)
 
     expect(manager.getName()).toEqual('Scott');
     expect(manager.getId()).toEqual(expect.any(Number));
