@@ -63,4 +63,43 @@
     `
   };
 
-  module.exports = { generateHTML };
+  // push array to page 
+const generateHTML = data => {
+
+    // array for cards 
+    pageArray = []; 
+
+    for (let i = 0; i < data.length; i++) {
+        const employee = data[i];
+        const title = employee.getRole(); 
+
+        if (title === 'Manager') {
+            const managerCard = managerCard(employee);
+
+            pageArray.push(managerCard);
+        }
+
+        if (title === 'Engineer') {
+            const engineerCard = engineerCard(employee);
+
+            pageArray.push(engineerCard);
+        }
+
+        if (title === 'Intern') {
+            const internCard = internCard(employee);
+
+            pageArray.push(internCard);
+        }
+        
+    }
+
+    // joining strings 
+    const employeeCards = pageArray.join('')
+
+    // return to generated page
+    const generateTeam = generateTeamHTML(employeeCards); 
+    return generateTeam;
+}
+
+
+  module.exports = generateHTML;
