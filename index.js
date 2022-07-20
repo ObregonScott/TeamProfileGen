@@ -3,7 +3,7 @@ const fs = require('fs');
 const Manager = require('./lib/Manager')
 const Engineer = require('./lib/Engineer')
 const Intern = require('./lib/Intern')
-//const generatePage = require('./src/page-template.js')
+const generatePage = require('./src/page-template.js')
 // const { writeFile, copyFile } = require('')
 // const employeeData = [];
 
@@ -119,20 +119,20 @@ const promptUser = () => {
 };
 
   promptUser()
-    .then(promptGenerator)
-    .then(employeeData =>{
-        return generatePage(portfolioData);
-    })
-    .then(pageHTML => {
-        return writeFile(pageHTML);
-    })
-    .then(writeFileResponse => {
-        console.log(writeFileResponse);
-        return copyFile();
-    })
-    .then(copyFileResponse => {
-        console.log(copyFileResponse);
-    })
-    .catch(err => {
-        console.log(err);
-    })
+    // .then(promptGenerator)
+    // .then(employeeData =>{
+    //     return generatePage(portfolioData);
+    // })
+    // .then(pageHTML => {
+    //     return writeFile(pageHTML);
+    // })
+    // .then(writeFileResponse => {
+    //     console.log(writeFileResponse);
+    //     return copyFile();
+    // })
+    // .then(copyFileResponse => {
+    //     console.log(copyFileResponse);
+    // })
+    // .catch(err => {
+    //     console.log(err);
+    // })
