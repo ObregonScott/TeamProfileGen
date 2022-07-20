@@ -3,10 +3,11 @@ const fs = require('fs');
 const Manager = require('./lib/Manager')
 const Engineer = require('./lib/Engineer')
 const Intern = require('./lib/Intern')
-// const generatePage = require('./src/page-template.js')
-const employees = [];
+//const generatePage = require('./src/page-template.js')
+// const { writeFile, copyFile } = require('')
+// const employeeData = [];
 
-const promptUser = employeeData => {
+const promptUser = () => {
     
     inquirer.prompt([
         {
@@ -107,8 +108,31 @@ const promptUser = employeeData => {
         //Role switching function for Manager, Engineer, and Intern
         .then(function (data) {
             console.log(data);
-            const { name, id, email, officeNumber, github, school, confirmAddEmployee} = data;
-        })
+
+            const { role, name, id, email, officeNumber, github, school, confirmAddEmployee} = data;
+
+            let employee;
+            if (confirmAddEmployee) { promptUser() };
+
+
+        });
 };
 
-  promptUser();
+  promptUser()
+    .then(promptGenerator)
+    .then(employeeData =>{
+        return generatePage(portfolioData);
+    })
+    .then(pageHTML => {
+        return writeFile(pageHTML);
+    })
+    .then(writeFileResponse => {
+        console.log(writeFileResponse);
+        return copyFile();
+    })
+    .then(copyFileResponse => {
+        console.log(copyFileResponse);
+    })
+    .catch(err => {
+        console.log(err);
+    })
