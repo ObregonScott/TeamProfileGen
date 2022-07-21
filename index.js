@@ -112,11 +112,11 @@ const promptUser = () => {
             let { role, name, id, email, officeNumber, github, school, confirmAddEmployee} = Data;
             let employee;
             if (role === 'Manager') {
-                employee = new Manager (role, name, id, email, officeNumber);
+                employee = new Manager (name, id, email, officeNumber);
             } else if (role === 'Engineer') {
-                employee = new Engineer (role, name, id, email, github)
+                employee = new Engineer (name, id, email, github)
             } else if (role === 'Intern') {
-                employee = new Intern (role, name, id, email, school)
+                employee = new Intern (name, id, email, school)
             }
             employeeData.push(employee);
 
