@@ -11,12 +11,6 @@ const promptUser = () => {
     
     inquirer.prompt([
         {
-            type: 'list',
-            name: 'role',
-            message: 'What role does the Employee serve?(required)',
-            choices: ['Manager', 'Engineer', 'Intern']
-        },
-        {
             type: 'input',
             name: 'name',
             message: "What is the Employee's name?(required)",
@@ -56,6 +50,12 @@ const promptUser = () => {
             }
         },
         {
+            type: 'list',
+            name: 'role',
+            message: 'What role does the Employee serve?(required)',
+            choices: ['Manager', 'Engineer', 'Intern']
+        },
+        {
             type: 'input',
             name: 'officeNumber',
             message: "What is the Managers office number? (required)",
@@ -72,7 +72,7 @@ const promptUser = () => {
         {
             type: 'input',
             name: "github",
-            message: "What is the employee's github username?(required)",
+            message: "What is the Engineer's github username?(required)",
             validate: githubInput => {
                 if (githubInput) {
                     return true;
@@ -118,21 +118,11 @@ const promptUser = () => {
         });
 };
 
+const writePage = () => {
+    const output = generatePage(promptUser)
+    fs.writeFile('./dist.index.html', output, () => {
+        console.log('Your Page Has Been Created!')
+    });
+};
+
   promptUser()
-    // .then(promptGenerator)
-    // .then(employeeData =>{
-    //     return generatePage(portfolioData);
-    // })
-    // .then(pageHTML => {
-    //     return writeFile(pageHTML);
-    // })
-    // .then(writeFileResponse => {
-    //     console.log(writeFileResponse);
-    //     return copyFile();
-    // })
-    // .then(copyFileResponse => {
-    //     console.log(copyFileResponse);
-    // })
-    // .catch(err => {
-    //     console.log(err);
-    // })
