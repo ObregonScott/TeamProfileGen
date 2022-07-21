@@ -6,7 +6,7 @@ const managerCard = manager => {
     <div class="card-body">
        <div class="card-header bg-primary text-light">
            <h2 class="">${manager.name}</h2>
-           <h3 class=""><i class="bi bi-mortarboard"></i> Intern</h2>
+           <h3 class=""><i class="bi bi-cup-hot"></i> Manager</h2>
        </div
        <ul class="list-group list-group-flush">
            <li class="list-group-item">ID Number: ${manager.id}</li>
@@ -23,7 +23,7 @@ const engineerCard = engineer => {
     <div class="card-body">
        <div class="card-header bg-primary text-light">
            <h2 class="">${engineer.name}</h2>
-           <h3 class=""><i class="bi bi-mortarboard"></i> Intern</h2>
+           <h3 class=""><i class="bi bi-eyeglasses"></i> Engineer</h2>
        </div
        <ul class="list-group list-group-flush">
            <li class="list-group-item">ID Number: ${engineer.id}</li>
