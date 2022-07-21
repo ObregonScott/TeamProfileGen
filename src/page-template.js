@@ -104,7 +104,7 @@ const generateEmployeePage = employeeCards => {
     <body>
     <header>
       <nav class="navbar" id="navbar">
-        <h1 class="navbar-brand mb-0 h1 w-100 text-center text-light font-monospace bg-danger" id="navbar-text">Team Info</h1> 
+        <h1 class="navbar-brand mb-0 h1 w-100 text-center text-light font-monospace bg-danger" id="navbar-text">My Team</h1> 
       </nav>
     </header>
     <main class="d-flex flex-wrap">
