@@ -3,9 +3,10 @@ const fs = require('fs');
 const Manager = require('./lib/Manager')
 const Engineer = require('./lib/Engineer')
 const Intern = require('./lib/Intern')
-const generatePage = require('./src/page-template.js')
+const generateHTML = require('./src/page-template.js');
+const { default: generate } = require('@babel/generator');
 // const { writeFile, copyFile } = require('')
-// const employeeData = [];
+const employeeData = [];
 
 const promptUser = () => {
     
@@ -106,23 +107,47 @@ const promptUser = () => {
     ])
 
         //Role switching function for Manager, Engineer, and Intern
-        .then(function (data) {
-            console.log(data);
+        .then(employeeData => {
+            
+            let { role, name, id, email, officeNumber, github, school, confirmAddEmployee} = employeeData;
 
-            const { role, name, id, email, officeNumber, github, school, confirmAddEmployee} = data;
+            if ( title === 'Manager') {
+                employee = new Manager (role, name, id, email, officeNumber);
+            } else if (title === 'Engineer') {
+                employee = new Engineer (role, name, id, email, github)
+            } else if (title === 'Intern') {
+                employee = new Intern (role, name, id, email, school)
+            }
+            employeeData.push(employee);
 
-            let employee;
-            if (confirmAddEmployee) { promptUser() };
+            if (confirmAddEmployee) {
+                return promptUser();
+            } else {
+                console.log(employeeData);
+                return employeeData;
+            }
+        })
+    }
 
-
-        });
-};
-
-const writePage = () => {
-    const output = generatePage(promptUser)
-    fs.writeFile('./dist.index.html', output, () => {
-        console.log('Your Page Has Been Created!')
-    });
-};
+// const writeFile = fileContent => {
+//     fs.writeFile('./dist/index.html', fileContent, err => {
+//         if(err) {
+//             console.log(err);
+//             return;
+//         } else{
+//             console.log('Your Page Has Been Created!')
+//         }
+//     });
+// };
 
   promptUser()
+//   .then(promptUser)
+//   .then(employeeData => {
+//     return generateHTML(employeeData);
+//   })
+//   .then(pageHTML => {
+//     return writeFile(pageHTML);
+//   })
+//   .catch(err => {
+//     console.log(err);
+//   });
