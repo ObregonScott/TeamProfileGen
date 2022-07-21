@@ -1,11 +1,12 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
+const generateHTML = require('./src/page-template.js');
+const employeeData = [];
+
+//Employee Profiles
 const Manager = require('./lib/Manager')
 const Engineer = require('./lib/Engineer')
 const Intern = require('./lib/Intern')
-const generateHTML = require('./src/page-template.js');
-// const { writeFile, copyFile } = require('')
-const employeeData = [];
 
 const promptUser = () => {
     
@@ -105,7 +106,7 @@ const promptUser = () => {
 
     ])
 
-        //Role switching function for Manager, Engineer, and Intern
+        //Role switching function for Manager, Engineer, and Intern that organizes into array for each
         .then(Data => {
             
             let { role, name, id, email, officeNumber, github, school, confirmAddEmployee} = Data;
@@ -129,6 +130,7 @@ const promptUser = () => {
         })
     }
 
+    //write file into pushed array or err
 const writeFile = fileContent => {
     fs.writeFile('./dist/index.html', fileContent, err => {
         if(err) {
@@ -141,13 +143,3 @@ const writeFile = fileContent => {
 };
 
   promptUser()
-//   .then(promptUser)
-//   .then(employeeData => {
-//     return generateHTML(employeeData);
-//   })
-//   .then(pageHTML => {
-//     return writeFile(pageHTML);
-//   })
-//   .catch(err => {
-//     console.log(err);
-//   });
