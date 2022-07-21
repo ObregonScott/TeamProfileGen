@@ -63,7 +63,7 @@
     `
   };
 
-  // push array to page 
+  // push all the card and emplyee data in array to page 
 const generateHTML = data => {
     //Array for Card Data
     pageArray = []; 
@@ -73,21 +73,21 @@ const generateHTML = data => {
             const title = employee.getRole(); 
 
                 if (title === 'Manager') {
-                    const managerCard = managerCard(employee);
+                    const manager = managerCard(employee);
 
-                    pageArray.push(managerCard);
+                    pageArray.push(manager);
                 }
 
                 if (title === 'Engineer') {
-                    const engineerCard = engineerCard(employee);
+                    const engineer = engineerCard(employee);
 
-                    pageArray.push(engineerCard);
+                    pageArray.push(engineer);
                 }
 
                 if (title === 'Intern') {
-                    const internCard = internCard(employee);
+                    const intern = internCard(employee);
 
-                    pageArray.push(internCard);
+                    pageArray.push(intern);
                 }
             
     }
@@ -131,7 +131,6 @@ const generateEmployeePage = employeeCards => {
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
   </html>
   `;
-
 };
 
 
