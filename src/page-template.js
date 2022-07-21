@@ -5,8 +5,8 @@ const managerCard = manager => {
     <div class="card shadow-lg rounded" style="width: 20rem;">
     <div class="card-body">
        <div class="card-header bg-primary text-light">
-           <h2 class="">${manager.name}</h2>
-           <h3 class=""><i class="bi bi-cup-hot"></i> Manager</h2>
+           <h2 class="text-center">${manager.name}</h2>
+           <h4 class="text-center"><i class="bi bi-cup-hot"></i> Manager</h4>
        </div
        <ul class="list-group list-group-flush">
            <li class="list-group-item">ID Number: ${manager.id}</li>
@@ -22,8 +22,8 @@ const engineerCard = engineer => {
     <div class="card shadow-lg rounded" style="width: 20rem;">
     <div class="card-body">
        <div class="card-header bg-primary text-light">
-           <h2 class="">${engineer.name}</h2>
-           <h3 class=""><i class="bi bi-eyeglasses"></i> Engineer</h2>
+           <h2 class="text-center">${engineer.name}</h2>
+           <h4 class="text-center"><i class="bi bi-eyeglasses"></i> Engineer</h4>
        </div
        <ul class="list-group list-group-flush">
            <li class="list-group-item">ID Number: ${engineer.id}</li>
@@ -39,8 +39,8 @@ const internCard = intern => {
     <div class="card shadow-lg rounded" style="width: 20rem;">
      <div class="card-body">
         <div class="card-header bg-primary text-light">
-            <h2 class="">${intern.name}</h2>
-            <h3 class=""><i class="bi bi-mortarboard"></i> Intern</h2>
+            <h2 class="text-center">${intern.name}</h2>
+            <h4 class="text-center"><i class="bi bi-mortarboard"></i> Intern</h4>
         </div
         <ul class="list-group list-group-flush">
             <li class="list-group-item">ID Number: ${intern.id}</li>
